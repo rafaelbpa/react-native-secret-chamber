@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-secret-chamber';
+import { multiply, SecretChamber } from 'react-native-secret-chamber';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -12,7 +12,12 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <SecretChamber
+        taps={10}
+        onOpen={() => console.log('já sei teu segredinho!')}
+      >
+        <Text>Result: {result}</Text>
+      </SecretChamber>
     </View>
   );
 }
