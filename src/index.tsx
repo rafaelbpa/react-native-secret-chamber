@@ -23,14 +23,14 @@ export const SecretChamber = ({
         if (!started) {
           timer.current = setTimeout(() => {
             setStarted(false);
-          }, 3000);
+          }, 1500);
         }
         if (started) {
           clearTimeout(timer.current);
           timer.current = setTimeout(() => {
             setStarted(false);
             setTapCounter(0);
-          }, 3000);
+          }, 1500);
         }
         setTapCounter((prev) => prev + 1);
         setStarted(true);
