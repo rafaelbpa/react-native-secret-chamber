@@ -24,7 +24,6 @@ export const SecretChamber = ({
   return (
     <Pressable
       onPress={() => {
-        console.log('cliquei');
         if (!started) {
           timer.current = setTimeout(() => {
             setStarted(false);
