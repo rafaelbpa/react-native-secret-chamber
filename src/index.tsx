@@ -2,10 +2,6 @@ import React, { useRef, useState } from 'react';
 import { Pressable } from 'react-native';
 import { View } from 'react-native';
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
-
 type SecretChamberProps = {
   taps: number;
   children: React.ReactNode;
