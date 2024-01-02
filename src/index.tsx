@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Pressable } from 'react-native';
 import { View } from 'react-native';
 
@@ -13,31 +13,31 @@ export const SecretChamber = ({
   children,
   onOpen,
 }: SecretChamberProps): JSX.Element => {
-  const [tapCounter, setTapCounter] = useState(0);
-  const [started, setStarted] = useState(false);
+  const tapCnt = useRef<number>(0);
+  const started = useRef<boolean>(false);
   const timer = useRef<NodeJS.Timeout>();
 
   return (
     <Pressable
       onPress={() => {
-        if (!started) {
+        if (started.current === false) {
           timer.current = setTimeout(() => {
-            setStarted(false);
+            started.current = false;
           }, 1500);
         }
         if (started) {
           clearTimeout(timer.current);
           timer.current = setTimeout(() => {
-            setStarted(false);
-            setTapCounter(0);
+            started.current = false;
+            tapCnt.current = 0;
           }, 1500);
         }
-        setTapCounter((prev) => prev + 1);
-        setStarted(true);
-        if (tapCounter >= taps) {
-          setTapCounter(0);
+        tapCnt.current += 1;
+        started.current = true;
+        if (tapCnt.current >= taps) {
+          tapCnt.current = 0;
           clearTimeout(timer.current);
-          setStarted(false);
+          started.current = false;
           onOpen();
         }
       }}

@@ -159,5 +159,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "@react-native/babel-preset": "^0.74.0"
   }
 }
