@@ -8,6 +8,7 @@ export default function App() {
     <View style={styles.container}>
       <SecretChamber
         taps={10}
+        password="1234"
         onOpen={() => console.log('entered the chamber')}
       >
         <Text>Testing</Text>

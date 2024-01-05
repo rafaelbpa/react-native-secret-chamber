@@ -1,17 +1,24 @@
 import React, { useRef } from 'react';
+import { Alert } from 'react-native';
 import { Pressable } from 'react-native';
 import { View } from 'react-native';
 
 type SecretChamberProps = {
-  taps: number;
   children: React.ReactNode;
   onOpen: () => void;
+  taps: number;
+  password?: string;
+  alertTitle?: string;
+  alertMessage?: string;
 };
 
 export const SecretChamber = ({
-  taps,
   children,
   onOpen,
+  taps,
+  password,
+  alertTitle = 'Password',
+  alertMessage,
 }: SecretChamberProps): JSX.Element => {
   const tapCnt = useRef<number>(0);
   const started = useRef<boolean>(false);
@@ -38,7 +45,15 @@ export const SecretChamber = ({
           tapCnt.current = 0;
           clearTimeout(timer.current);
           started.current = false;
-          onOpen();
+          if (password) {
+            Alert.prompt(alertTitle, alertMessage, (typed) => {
+              if (typed === password) {
+                onOpen();
+              }
+            });
+          } else {
+            onOpen();
+          }
         }
       }}
     >
