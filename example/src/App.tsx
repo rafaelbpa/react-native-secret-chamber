@@ -9,7 +9,9 @@ export default function App() {
       <SecretChamber
         taps={10}
         password="1234"
-        onOpen={() => console.log('entered the chamber')}
+        alertTitle="You should not be here!"
+        alertMessage="Get out of my swamp!"
+        onOpen={() => console.log('you entered the chamber')}
       >
         <Text>Testing</Text>
       </SecretChamber>
