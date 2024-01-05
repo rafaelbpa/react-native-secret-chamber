@@ -1,11 +1,15 @@
 # react-native-secret-chamber
 
-This library is a small tool when you want a secret room on your `React-Native` app.
+This library is a small tool when you want a secret on your `React-Native` app. You might want to navigate to a hidden screen, display an alert or anything you want.
 
 ## Installation
 
 ```sh
 npm install react-native-secret-chamber
+```
+or
+```sh
+yarn add react-native-secret-chamber
 ```
 
 ## Usage
