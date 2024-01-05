@@ -40,6 +40,11 @@ export default function App() {
 
 ```
 
+## Example
+
+<img src="https://github.com/rafaelbpa/react-native-secret-chamber/assets/5288896/59125ed5-b0f3-4747-844c-aa08d25f4cb2" width="250" />
+
+
 ## Props
 | Prop name     | required      | default value   | description |
 | ------------- |:-------------:| :-------------: | :------------- |
