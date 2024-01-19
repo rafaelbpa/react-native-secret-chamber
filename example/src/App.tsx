@@ -1,20 +1,26 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { Alert, StyleSheet, View, Text } from 'react-native';
 import { SecretChamber } from 'react-native-secret-chamber';
 
 export default function App() {
+  const [secret, setSecret] = React.useState(false);
+
   return (
     <View style={styles.container}>
       <SecretChamber
         taps={10}
-        password="1234"
+        password="123456"
         alertTitle="You should not be here!"
         alertMessage="Get out of my swamp!"
-        onOpen={() => console.log('you entered the chamber')}
+        onOpen={() => {
+          Alert.alert('You entered', 'this gonna be our secret, okay? :)');
+          setSecret(true);
+        }}
       >
-        <Text>Testing</Text>
+        <Text>There's nothing to see here</Text>
       </SecretChamber>
+      {secret && <Text>Oops, you got me!</Text>}
     </View>
   );
 }
