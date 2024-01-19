@@ -56,8 +56,8 @@ export default function App() {
 | ------------- |:-------------:| :-------------: | :---:          | :------------- |
 | taps          | Yes           | you have to set |  number        | The number of taps required to trigger the action |
 | onOpen        | Yes           | you have to set |  () => void    | The function you want to trigger when the number of taps reached the required amount |
-| password      | No            |    "Password"   |  string        | An optional password. It will trigger an alert prompt asking for the password. |
-| alertTitle    | No            |        -        |  string        | An optional title for the alert in case you set a password |
+| password      | No            | you have to set |  string        | An optional password. It will trigger an alert prompt asking for the password. |
+| alertTitle    | No            |   "Password"    |  string        | An optional title for the alert in case you set a password |
 | alertMessage  | No            |        -        |  string        | An optional message for the alert in case you set a password |
 
 ## License
