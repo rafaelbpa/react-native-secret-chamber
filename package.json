@@ -1,6 +1,6 @@
 {
   "name": "react-native-secret-chamber",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "The Chamber of Secrets has been opened",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
